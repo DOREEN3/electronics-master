@@ -125,10 +125,10 @@ const Signup = () => {
         } 
     }
   return (
-    <div className='container-fluid d-flex justify-content-center align-items-center p-5'>
+    <div className='container-fluid d-flex justify-content-center align-items-center py-5 px-3'>
 
       
-        <form onSubmit={handleSubmit} className='border rounded shadow p-4 w-50'>
+        <form onSubmit={handleSubmit} className='border rounded shadow p-4 w-100 w-md-50'>
             <fieldset>
                 <legend className='text-center fs-3 fw-bold'>Sign Up</legend>
                   {/* bind the states  */}
@@ -189,5 +189,6 @@ const Signup = () => {
     </div>
   )
 }
+
 
 export default Signup
