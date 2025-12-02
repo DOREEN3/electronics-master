@@ -97,6 +97,18 @@ footer {
   bottom: 0;
   width: 100%;
 }
+footer a:hover {
+  color: #dc3545 !important; /* Bootstrap danger color */
+}
+
+footer img {
+  transition: transform 0.3s ease;
+}
+
+footer img:hover {
+  transform: scale(1.2);
+}
+
 .signup-form {
   width: 100%;
   margin: auto;
