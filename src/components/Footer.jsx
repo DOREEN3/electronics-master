@@ -16,7 +16,7 @@ const Footer = () => {
   };
   return (
     <>
-      <div className="container-fluid bg-success">
+      <div className="container-fluid"style={{ backgroundColor: "green" }}>
           <div className="row g-4">
 
       {/* About Us */}
@@ -125,6 +125,7 @@ const Footer = () => {
 
 
 export default Footer;
+
 
 
 
