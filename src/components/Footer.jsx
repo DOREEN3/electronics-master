@@ -65,12 +65,15 @@ const Footer = () => {
         <h4 className="text-white text-center mb-3">Stay Connected</h4>
 
         <div className="d-flex justify-content-center mb-3">
-          <img
+          <a href="https://WWW.facebook.com>
+              <img
             src="assets/fb.png"
             alt="facebook"
             className="mx-2"
             style={{ width: "35px" }}
           />
+            </a>
+        
           <img
             src="assets/in.png"
             alt="instagram"
@@ -95,7 +98,7 @@ const Footer = () => {
       </div>
 
       <div className="container-fluid bg-dark">
-        <p className="text-center small mb-0">
+        <p className="text-center text-white small mb-0">
       © {new Date().getFullYear()} ElectroMart — All Rights Reserved.
         </p>
       </div>
@@ -105,4 +108,5 @@ const Footer = () => {
 
 
 export default Footer;
+
 
