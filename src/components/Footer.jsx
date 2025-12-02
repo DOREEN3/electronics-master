@@ -1,10 +1,19 @@
-import React from 'react';
+import React,{useState} from 'react';
 
 const Footer = () => {
-  const handleSubmit=(e)=>{
-    e.preventDefault()
-    alert("Message sent successful!")
-  }
+ const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!email || !message) {
+      alert("Please fill in both fields");
+      return;
+    }
+    alert(`Message sent!\nEmail: ${email}\nMessage: ${message}`);
+    setEmail("");
+    setMessage("");
+  };
   return (
     <>
       <div className="container-fluid bg-success">
@@ -43,6 +52,8 @@ const Footer = () => {
 
         <input
           type="email"
+         value={email}
+         onChange={(e) => setEmail(e.target.value)}
           placeholder="Enter your email"
           className="form-control mb-3"
           required
@@ -51,7 +62,9 @@ const Footer = () => {
         <textarea
           placeholder="Leave a message"
           className="form-control mb-3"
-          rows="3"
+          rows="5"
+          value={message}
+          onChange={(e) => setMessage(e.target.value)}
           required
         ></textarea>
 
@@ -108,5 +121,6 @@ const Footer = () => {
 
 
 export default Footer;
+
 
 
