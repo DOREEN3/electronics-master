@@ -78,7 +78,7 @@ const Footer = () => {
         <h4 className="text-white text-center mb-3">Stay Connected</h4>
 
         <div className="d-flex justify-content-center mb-3">
-          <a href="https://WWW.facebook.com>
+          <a href="https://WWW.facebook.com">
               <img
             src="assets/fb.png"
             alt="facebook"
@@ -121,6 +121,7 @@ const Footer = () => {
 
 
 export default Footer;
+
 
 
 
