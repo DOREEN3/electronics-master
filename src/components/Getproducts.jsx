@@ -1,0 +1,280 @@
+import React, { useState, useEffect,useMemo } from "react";
+import axios from "axios";
+import Updateproducts from "./Updateproducts";
+import Deleteproducts from "./Deleteproducts";
+import Hotcategory from "./Hotcategory";
+import CategoryCarousel from "./CategoryCarousel";
+import ProductCard from "./ProductCard";
+import { useNavigate } from "react-router-dom";
+
+const Getproducts = () => {
+  const navigate = useNavigate();
+
+  // Product states
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState("");
+  const [error, setError] = useState("");
+
+  // Modals
+  const [selectedProduct, setSelectedProduct] = useState(null);
+  const [deleteProduct, setDeleteProduct] = useState(null);
+
+  
+
+  // Search state
+  const [searchTerm, setSearchTerm] = useState("");
+  const [showModal, setShowModal] = useState(false);
+
+  // Category hover & hot category
+  const [hoveredCategory, setHoveredCategory] = useState(null);
+  const [hotCategory, setHotCategory] = useState(null);
+
+  // Pagination
+  const [visible, setVisible] = useState(6);
+
+  // Sorting
+  const [sortDirection, setSortDirection] = useState("asc");
+  const [sortByField, setSortByField] = useState("product_cost");
+
+  // Fetch products
+  const getProducts = async () => {
+    setLoading("Loading products...");
+    try {
+      const response = await axios.get(
+        "https://doreen98.pythonanywhere.com/api/get_product2"
+      );
+      setProducts(response.data);
+      setLoading("");
+    } catch (err) {
+      setError(err.message);
+      setLoading("");
+    }
+  };
+
+  useEffect(() => {
+    getProducts();
+  }, []);
+
+  // Filter products by search term
+ const filteredProducts = useMemo(() => {
+  return products.filter((product) =>
+    product.product_name?.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+}, [products, searchTerm]);
+
+
+
+  // Unique categories
+  const categories = [...new Set(products.map((p) => p.product_category))];
+
+  // Products to display (category hover OR search)
+ const categoryProducts = useMemo(() => {
+  return hoveredCategory
+    ? products.filter((p) => p.product_category === hoveredCategory)
+    : filteredProducts;
+}, [hoveredCategory, filteredProducts]);
+  
+  // Sorted products
+  const sortedProducts = useMemo(() => {
+  if (!sortDirection || !sortByField) return categoryProducts;
+  return [...categoryProducts].sort((a, b) =>
+    sortDirection === "asc"
+      ? a[sortByField] - b[sortByField]
+      : b[sortByField] - a[sortByField]
+  );
+}, [categoryProducts, sortDirection, sortByField]);
+
+  useEffect(() => {
+  if (searchTerm.trim() === "") {
+    // reset sort to default
+    setSortDirection(""); 
+    setSortByField("product_cost"); 
+    setVisible(6)
+  }
+}, [searchTerm]);
+
+const handleReset=()=>{
+  setHotCategory("")
+  setSearchTerm("")
+  setSortDirection("asc")
+}
+
+  
+  return (
+    <div className="container-fluid text-white">
+      {/* Header */}
+      <div className="bg-white text-center">
+        <h2 className="text-primary p-2">Available Products</h2>
+        {loading && <h3 className="text-warning">{loading}</h3>}
+        {error && <h3 className="text-danger">{error}</h3>}
+      </div>
+
+      {/* Search & Sort */}
+     <div className="row g-3 justify-content-center mb-5 ms-4 " style={{ width: "90%" }}>
+  <div className="col-md-8 position-relative">
+    <div className="input-group">
+      <input
+        type="text"
+        className="form-control"
+        placeholder="I'm looking for..."
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
+      <button
+        className="btn btn-success"
+        type="button"
+        onClick={() => searchTerm.trim() !== "" && setShowModal(true)}
+      >
+        <i className="bi bi-search"></i>
+      </button>
+    </div>
+
+    {/* Search Suggestion Cards */}
+    {searchTerm.trim() !== "" && filteredProducts.length > 0 && (
+      <div
+        className="search-suggestions bg-white text-dark rounded shadow"
+        style={{
+          position: "absolute",
+          top: "100%",
+          left: 0,
+          width: "100%",
+          maxHeight: "300px",
+          overflowY: "auto",
+          zIndex: 1000,
+        }}
+      >
+        {filteredProducts.map((product) => (
+          <div
+            key={product.id}
+            className="p-2 border-bottom d-flex align-items-center"
+            style={{ cursor: "pointer" }}
+            onClick={() => {
+              navigate("/mpesapayment", { state: { product } });
+              setSearchTerm(""); // Reset search after navigation
+            }}
+          >
+            <img
+              src={`https://doreen98.pythonanywhere.com${product.product_photo}`}
+              alt={product.product_name}
+              style={{
+                width: "50px",
+                height: "50px",
+                objectFit: "contain",
+                marginRight: "10px",
+              }}
+            />
+            <div>
+              <strong>{product.product_name}</strong>
+              <p className="mb-0 small">{product.product_description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+
+  <div className="col-md-2">
+    <select
+      className="form-select"
+      value={sortDirection}
+      onChange={(e) => {
+        setSortByField("product_cost");
+        setSortDirection(e.target.value);
+      }}
+    >
+      <option value="">Price</option>
+      <option value="desc">Highest Price</option>
+      <option value="asc">Lowest Price</option>
+    </select>
+  </div>
+  <div className="col-md-2">
+    <button onClick={handleReset}className="btn btn-dark w-100">Reset</button>
+  </div>
+</div>
+
+      {/* Modals */}
+      {deleteProduct && (
+        <Deleteproducts
+          product={deleteProduct}
+          onClose={() => setDeleteProduct(null)}
+          onDelete={getProducts}
+        />
+      )}
+      {selectedProduct && (
+        <Updateproducts
+          product={selectedProduct}
+          onClose={() => setSelectedProduct(null)}
+          onUpdated={getProducts}
+        />
+      )}
+
+      {/* Main Section */}
+     <div className="container-fluid bg-dark position-relative">
+      <div className="row">
+        {/*category side bar and carousel */}
+        <CategoryCarousel
+          hoveredCategory={hoveredCategory}
+          products={products}
+          setHoveredCategory={setHoveredCategory}
+          categories={categories}
+        
+        />
+      </div>
+        {/*  hotcategory + productslist */}
+        <div className="row">
+          <div className="col-md-12">
+
+    
+        <Hotcategory
+          hotCategory={hotCategory}
+          products={products}
+          categories={categories}
+          hoveredCategory={hoveredCategory}
+          setHotCategory={setHotCategory}
+          setHoveredCategory={setHoveredCategory}
+          navigate={navigate}
+          setSelectedProduct={setSelectedProduct}
+          setDeleteProduct={setDeleteProduct}
+        />
+     <div className="row">
+        <div className="col-md-12">
+          <div className="card bg-danger m-2 shadow-lg text-center">
+            <div className="scroll-text">
+              <p>
+                For inquiries or to place your order contact us on 
+                <i className="bi bi-telephone-fill text-black ms-2 fs-3 me-2"></i> <span className="me-2 ">0796651091 or </span>
+                <i className="bi bi-envelope-fill text-black fs-3 me-2"></i> 
+                <span className="me-2">electromart@gmail.com</span>
+              </p>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+      <ProductCard
+        visible={visible}
+        setVisible={setVisible}
+        sortedProducts={sortedProducts}
+        categoryProducts={categoryProducts}
+        hoveredCategory={hoveredCategory}
+        setSelectedProduct={setSelectedProduct}
+        setDeleteProduct={setDeleteProduct}
+        navigate={navigate}
+        loading={loading}
+      />
+
+    </div>
+  </div>
+
+</div>
+
+      </div>
+  )
+};
+
+export default Getproducts;
+
+
+
+

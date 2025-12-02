@@ -1,0 +1,256 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.product-img-wrapper {
+  width: 100%;
+  height: 200px;        /* fixed wrapper height */
+  overflow: hidden;     /* prevents overflow */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border-radius: 5px;
+}
+
+.productimage {
+  max-height: 100%;      /* <— VERY important */
+  max-width: 100%;
+  object-fit: contain;
+}
+
+.card{
+  text-align: center;
+  transition: all 0.4s ease-in-out;
+}
+.card:hover{
+  transform: rotate3d(0, 1, 0, 15deg) scale(1.03);
+  box-shadow: 5px 10px 18px ;
+}
+
+html, body {
+  height: 100%;
+}
+
+.min-vh-100 {
+  min-height: 100vh;
+}
+label{
+  font-size: large;
+  font-weight: bold;
+}
+/* Make carousel indicators circular */
+.carousel-indicators [data-bs-target] {
+  width: 15px;               /* size of circle */
+  height: 15px;
+  border-radius: 50%;        /* makes them circular */
+  background-color: gray;    /* default (inactive) color */
+  border: none;              /* remove default border */
+  opacity: 0.5;              /* slightly transparent */
+  transition: all 0.3s ease; /* smooth animation */
+}
+
+/* Active indicator (the one showing the current slide) */
+.carousel-indicators .active {
+  background-color: red;     /* red when active */
+  opacity: 1;
+  transform: scale(1.2);     /* slightly larger when active */
+}
+.items {
+  position: absolute; /* needed to float over carousel */
+  top: 20%;
+  right: 5%;
+  width: 50%;
+  max-height: 60%;
+  overflow-y: auto;
+  background-color: rgba(33, 37, 41, 0.95);
+  z-index: 1000;
+  border-radius: 15px;
+  padding: 20px;
+}
+.product-container{
+  margin: 30px auto;
+  max-width: 95%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.7);
+  transform: translateZ(0);
+}
+
+.navbar .nav-link {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: yellow !important;
+  transform: scale(1.05) translateY(-2px);
+}
+footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+}
+.signup-form {
+  width: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.signup-form input {
+  padding: 8px;
+  border: 1px solid #bbb;
+  border-radius: 4px;
+}
+
+button[disabled] {
+  background: #ccc;
+  cursor: not-allowed;
+}
+
+.error {
+  color: red;
+  font-size: 0.8rem;
+  margin-top: -5px;
+}
+.scroll-text {
+  white-space: nowrap;
+  overflow: hidden;
+  box-sizing: border-box;
+  color: greenyellow;
+  font-size: large;
+  font-weight: bold;
+}
+
+.scroll-text p {
+  display: inline-block;
+
+  padding-left: 100%;
+  animation: scroll 12s linear infinite;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.chatbot-container {
+  width: 400px;
+  max-width: 90%;
+  height: 500px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, sans-serif;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateY(100%);
+  opacity: 0;
+  z-index: 1000;
+  padding-bottom: 60px;
+}
+
+.chatbot-container.open {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.chatbot-header {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  font-weight: bold;
+  border-radius: 20px 20px 0 0;
+}
+
+/* Messages now scroll inside their area */
+.chatbot-messages {
+  flex-grow: 1;       /* fills all space above input */
+  overflow-y: auto;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  scroll-behavior: smooth;
+}
+
+/* Messages styling */
+.message {
+  padding: 8px 12px;
+  border-radius: 12px;
+  max-width: 80%;
+}
+
+.message.user {
+  align-self: flex-end;
+  background-color: #007bff;
+  color: white;
+}
+
+.message.bot {
+  align-self: flex-start;
+  background-color: #f32637;
+  color: white;
+}
+
+/* Input stays pinned at bottom */
+.chatbot-input {
+  display: flex;
+  border-top: 1px solid #ccc;
+  padding: 5px;
+}
+
+.chatbot-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border-radius: 20px 0 0 20px;
+  border: 1px solid #ccc;
+  outline: none;
+  font-size: 14px;
+}
+
+.chatbot-input button {
+  padding: 10px 15px;
+  border-radius: 0 20px 20px 0;
+  border: 1px solid #ccc;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+ 
+}
+
+.chatbot-toggler {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-size: 24px;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  cursor: pointer;
+  z-index: 1001;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
