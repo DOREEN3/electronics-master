@@ -29,11 +29,11 @@ const Footer = () => {
       <div className="col-md-3">
         <h4 className="mb-3">Important Links</h4>
         <ul className="list-unstyled small">
-          <li><a href="index.html" className="text-white text-decoration-none">Home</a></li>
+          <li><a href="/index.html" className="text-white text-decoration-none">Home</a></li>
           <li><a href="/signup" className="text-white text-decoration-none">Sign Up</a></li>
           <li><a href="/sinin" className="text-white text-decoration-none">Sign In</a></li>
-          <li><a href="/addproducts" className="text-white text-decoration-none">Add products</a></li>
-          <li><a href="#" className="text-white text-decoration-none">Privacy Policy</a></li>
+          <li><a href="/addelectronics" className="text-white text-decoration-none">Add products</a></li>
+          <li><a href="/cart" className="text-white text-decoration-none"> <i className="bi bi-cart-fill" style={{ fontSize: "1.5rem", color: "black" }}></i></a></li>
         </ul>
       </div>
 
@@ -95,8 +95,8 @@ const Footer = () => {
       </div>
 
       <div className="container-fluid bg-dark">
-        <p className="mb-0 py-4 text-white text-center">
-          Developed by Doreen.&copy; 2025. All rights reserved.
+        <p className="text-center small mb-0">
+      © {new Date().getFullYear()} ElectroMart — All Rights Reserved.
         </p>
       </div>
     </>
@@ -105,3 +105,4 @@ const Footer = () => {
 
 
 export default Footer;
+
