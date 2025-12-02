@@ -61,8 +61,8 @@ const Addproducts = () => {
 
   const imagepath = 'https://doreen98.pythonanywhere.com/static/images/';
   return (
-    <div className='container-fluid d-flex justify-content-center align-items-center p-5'>
-      <form onSubmit={handleSubmit} className="border shadow rounded w-50 p-4">
+    <div className='container-fluid d-flex justify-content-center align-items-center py-5 px-3'>
+      <form onSubmit={handleSubmit} className="border shadow rounded p-4 w-100 w-md-50">
         <fieldset>
         <legend className='fw-bold fs-3 text-center'>Upload Product</legend>
 
@@ -121,5 +121,6 @@ const Addproducts = () => {
     </div>
   )
 }
+
 
 export default Addproducts
