@@ -8,34 +8,90 @@ const Footer = () => {
   return (
     <>
       <div className="container-fluid bg-success">
-        <section className="row g-3">
-          <div className="col-md-4  text-center">
-            <h2 className='text-white'>About Us</h2>
-            <p>Welcome to ElectroMart, your trusted destination for the latest and most innovative electronics. We believe technology should make life easier, smarter, and more exciting—so we’ve built a shopping experience that delivers exactly that.</p>
-       
-            <p>we curate high-quality gadgets, devices, and accessories from leading global brands and emerging tech innovators. Whether you’re upgrading your workspace, enhancing your home, or searching for the perfect gift, our collection is designed to bring cutting-edge performance straight to your fingertips.</p>
-          </div>
+          <div className="row g-4">
 
-          <div className="col-md-4 text-white">
-            <h2 className="text-center">Contact Us</h2>
-            <input type="email" placeholder="Enter your email" className="form-control" required />
-            <br />
-            <textarea placeholder="Leave a message" className="form-control" required></textarea>
-            <br />
-            <button className="btn btn-outline-danger mb-2" onClick={handleSubmit}>Send Message</button>
-          </div>
+      {/* About Us */}
+      <div className="col-md-3">
+        <h4 className="mb-3">About Us</h4>
+        <p className="small">
+          Welcome to ElectroMart — your trusted destination for the latest and
+          most innovative electronics. We deliver technology that makes life
+          easier, smarter, and more exciting.
+        </p>
 
-          <div className="col-md-4 ">
-            <h2 className="text-white text-center">Stay Connected</h2>
-            <div className="d-flex justify-content-center ">
-             <img src="assets/fb.png" alt="facebook" style={{ width: '10%',height:"50px",padding:"5px"}} />
-             <img src="assets/in.png" alt="instagram" style={{ width: '10%',height:"50px",padding:"5px"}} />
-             <img src="assets/x.png" alt="x" style={{ width: '10%',height:"50px" ,padding:"5px"}} />
-            </div>
-            <p className='mt-4'>Stay updated with the latest tech trends, exclusive deals, and new product drops!
-            Follow us on our social channels and join our growing community of tech enthusiasts.</p>
-          </div>
-        </section>
+        <p className="small">
+          Explore high-quality gadgets from top brands and emerging tech
+          innovators. Upgrade your space with the best in modern tech.
+        </p>
+      </div>
+
+      {/* Important Links */}
+      <div className="col-md-3">
+        <h4 className="mb-3">Important Links</h4>
+        <ul className="list-unstyled small">
+          <li><a href="index.html" className="text-white text-decoration-none">Home</a></li>
+          <li><a href="/signup" className="text-white text-decoration-none">Sign Up</a></li>
+          <li><a href="/sinin" className="text-white text-decoration-none">Sign In</a></li>
+          <li><a href="/addproducts" className="text-white text-decoration-none">Add products</a></li>
+          <li><a href="#" className="text-white text-decoration-none">Privacy Policy</a></li>
+        </ul>
+      </div>
+
+      {/* Contact Us */}
+      <div className="col-md-3">
+        <h4 className="text-white text-center mb-3">Contact Us</h4>
+
+        <input
+          type="email"
+          placeholder="Enter your email"
+          className="form-control mb-3"
+          required
+        />
+
+        <textarea
+          placeholder="Leave a message"
+          className="form-control mb-3"
+          rows="3"
+          required
+        ></textarea>
+
+        <button className="btn btn-danger w-100" onClick={handleSubmit}>
+          Send Message
+        </button>
+      </div>
+
+      {/* Stay Connected */}
+      <div className="col-md-3">
+        <h4 className="text-white text-center mb-3">Stay Connected</h4>
+
+        <div className="d-flex justify-content-center mb-3">
+          <img
+            src="assets/fb.png"
+            alt="facebook"
+            className="mx-2"
+            style={{ width: "35px" }}
+          />
+          <img
+            src="assets/in.png"
+            alt="instagram"
+            className="mx-2"
+            style={{ width: "35px" }}
+          />
+          <img
+            src="assets/x.png"
+            alt="x"
+            className="mx-2"
+            style={{ width: "35px" }}
+          />
+        </div>
+
+        <p className="small">
+          Stay updated with the latest tech trends, exclusive deals, and new
+          arrivals. Join our community of tech lovers!
+        </p>
+      </div>
+    </div>
+
       </div>
 
       <div className="container-fluid bg-dark">
@@ -46,5 +102,6 @@ const Footer = () => {
     </>
   );
 }
+
 
 export default Footer;
