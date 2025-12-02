@@ -45,8 +45,8 @@ const Signin = () => {
   }
 
   return (
-    <div className='container-fluid d-flex justify-content-center align-items-center p-5'>
-      <form onSubmit={handleSubmit} className='border rounded shadow p-4 w-50'>
+    <div className='container-fluid d-flex justify-content-center align-items-center py-5 px-3'>
+      <form onSubmit={handleSubmit} className='border rounded shadow p-4 w-100 w-md-50'>
         <fieldset>
           <legend className='text-center fs-3 fw-bold'>Sign In</legend>
           {/* bind the state variable  */}
@@ -81,5 +81,6 @@ const Signin = () => {
     </div>
   )
 }
+
 
 export default Signin
