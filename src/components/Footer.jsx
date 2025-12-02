@@ -38,10 +38,10 @@ const Footer = () => {
       <div className="col-md-3">
         <h4 className="mb-3 text-white">Important Links</h4>
         <ul className="list-unstyled small">
-          <li><a href="/index.html" className=" text-decoration-none">Home</a></li>
-          <li><a href="/signup" className=" text-decoration-none">Sign Up</a></li>
-          <li><a href="/sinin" className=" text-decoration-none">Sign In</a></li>
-          <li><a href="/addelectronics" className=" text-decoration-none">Add products</a></li>
+          <li><a href="/index.html" className="text-black text-decoration-none">Home</a></li>
+          <li><a href="/signup" className="text-black text-decoration-none">Sign Up</a></li>
+          <li><a href="/sinin" className="text-black text-decoration-none">Sign In</a></li>
+          <li><a href="/addelectronics" className="text-black text-decoration-none">Add products</a></li>
           <li><a href="/cart" className=" text-decoration-none"> <i className="bi bi-cart-fill" style={{ fontSize: "1.5rem", color: "black" }}></i></a></li>
         </ul>
       </div>
@@ -125,6 +125,7 @@ const Footer = () => {
 
 
 export default Footer;
+
 
 
 
