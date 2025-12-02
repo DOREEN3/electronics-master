@@ -62,7 +62,10 @@ const Addproducts = () => {
   const imagepath = 'https://doreen98.pythonanywhere.com/static/images/';
   return (
     <div className='container-fluid d-flex justify-content-center align-items-center py-5 px-3'>
-      <form onSubmit={handleSubmit} className="border shadow rounded p-4 w-100 w-md-50">
+      <form onSubmit={handleSubmit} className="border shadow rounded p-4 "
+         styles={{ width: '100%',         // full width on very small screens
+              maxWidth: '450px',     // never exceed 450px on desktop
+            minWidth: '300px'}}>
         <fieldset>
         <legend className='fw-bold fs-3 text-center'>Upload Product</legend>
 
@@ -124,3 +127,4 @@ const Addproducts = () => {
 
 
 export default Addproducts
+
