@@ -21,7 +21,7 @@ const Footer = () => {
 
       {/* About Us */}
       <div className="col-md-3">
-        <h4 className="mb-3">About Us</h4>
+        <h4 className="mb-3 text-white">About Us</h4>
         <p className="small">
           Welcome to ElectroMart — your trusted destination for the latest and
           most innovative electronics. We deliver technology that makes life
@@ -36,13 +36,13 @@ const Footer = () => {
 
       {/* Important Links */}
       <div className="col-md-3">
-        <h4 className="mb-3">Important Links</h4>
+        <h4 className="mb-3 text-white">Important Links</h4>
         <ul className="list-unstyled small">
-          <li><a href="/index.html" className="text-white text-decoration-none">Home</a></li>
-          <li><a href="/signup" className="text-white text-decoration-none">Sign Up</a></li>
-          <li><a href="/sinin" className="text-white text-decoration-none">Sign In</a></li>
-          <li><a href="/addelectronics" className="text-white text-decoration-none">Add products</a></li>
-          <li><a href="/cart" className="text-white text-decoration-none"> <i className="bi bi-cart-fill" style={{ fontSize: "1.5rem", color: "black" }}></i></a></li>
+          <li><a href="/index.html" className=" text-decoration-none">Home</a></li>
+          <li><a href="/signup" className=" text-decoration-none">Sign Up</a></li>
+          <li><a href="/sinin" className=" text-decoration-none">Sign In</a></li>
+          <li><a href="/addelectronics" className=" text-decoration-none">Add products</a></li>
+          <li><a href="/cart" className=" text-decoration-none"> <i className="bi bi-cart-fill" style={{ fontSize: "1.5rem", color: "black" }}></i></a></li>
         </ul>
       </div>
 
@@ -125,6 +125,7 @@ const Footer = () => {
 
 
 export default Footer;
+
 
 
 
