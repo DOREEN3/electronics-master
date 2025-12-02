@@ -87,18 +87,22 @@ const Footer = () => {
           />
             </a>
         
+        <a href="https://WWW.instagram.com">
           <img
             src="assets/in.png"
             alt="instagram"
             className="mx-2"
             style={{ width: "35px" }}
           />
+        </a>
+          <a href="https://WWW.telegram.com">
           <img
             src="assets/x.png"
             alt="x"
             className="mx-2"
             style={{ width: "35px" }}
           />
+          </a>
         </div>
 
         <p className="small">
@@ -121,6 +125,7 @@ const Footer = () => {
 
 
 export default Footer;
+
 
 
 
