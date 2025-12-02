@@ -98,7 +98,8 @@ footer {
   width: 100%;
 }
 footer a:hover {
-  color: #dc3545 !important; /* Bootstrap danger color */
+  color: yellow !important; 
+  transform:scale(1.05) translateY(-2px);
 }
 
 footer img {
