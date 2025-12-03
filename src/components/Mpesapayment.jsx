@@ -54,7 +54,7 @@ const Mpesapayment = () => {
         </div>
       )}
 
-      <div className="col-md-6 rounded shadow card p-4"  style={{ maxHeight: '600px', overflowY: 'auto' }}>
+      <div className="col-md-6 rounded shadow card p-2"  style={{ maxHeight: '600px', overflowY: 'auto' }}>
         <h1 className="text-info text-center">Lipa na Mpesa</h1>
         <h3 className="text-success">{success}</h3>
         <h3 className="text-info">{loading}</h3>
@@ -66,7 +66,7 @@ const Mpesapayment = () => {
             <img
               src={`https://doreen98.pythonanywhere.com${product.product_photo}`}
               alt={product.product_name}
-              className="mt-4 productimage"
+              className="mt-2 productimage"
             />
 
             <div className="card-body">
@@ -142,6 +142,7 @@ const Mpesapayment = () => {
 };
 
 export default Mpesapayment;
+
 
 
 
