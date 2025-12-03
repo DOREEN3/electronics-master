@@ -54,7 +54,7 @@ const Mpesapayment = () => {
         </div>
       )}
 
-      <div className="col-md-6 rounded shadow card p-4" style={{ minHeight: "300px" }}>
+      <div className="col-md-6 rounded shadow card p-4"  style={{ maxHeight: '600px', overflowY: 'auto' }}>
         <h1 className="text-info text-center">Lipa na Mpesa</h1>
         <h3 className="text-success">{success}</h3>
         <h3 className="text-info">{loading}</h3>
@@ -142,6 +142,7 @@ const Mpesapayment = () => {
 };
 
 export default Mpesapayment;
+
 
 
 
