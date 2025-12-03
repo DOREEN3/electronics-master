@@ -97,7 +97,7 @@ footer {
   bottom: 0;
   width: 100%;
 }
-footer a:hover {
+.footer-section a:hover {
   color: yellow !important; 
   transform:scale(1.05) translateY(-2px);
 }
@@ -109,6 +109,10 @@ footer img {
 footer img:hover {
   transform: scale(1.2);
 }
+.footer-links li {
+  margin-bottom: 10px;
+}
+
 
 .signup-form {
   width: 100%;
