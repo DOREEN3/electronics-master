@@ -128,10 +128,9 @@ const Signup = () => {
     <div className='container-fluid d-flex justify-content-center align-items-center py-5 px-3'>
 
       
-        <form onSubmit={handleSubmit} className='border rounded shadow p-4'
-             styles={{ width: '100%',         // full width on very small screens
-              maxWidth: '1200px',     // never exceed 450px on desktop
-            minWidth: '300px'}}>
+        <form onSubmit={handleSubmit} className='border rounded shadow p-4 w-50'
+             styles={{ 
+             minWidth: '300px'}}>
             <fieldset>
                 <legend className='text-center fs-3 fw-bold'>Sign Up</legend>
                   {/* bind the states  */}
@@ -195,6 +194,7 @@ const Signup = () => {
 
 
 export default Signup
+
 
 
 
