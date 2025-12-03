@@ -96,7 +96,7 @@ const Addproducts = () => {
           className="form-control"
            /> <br /><br />
         <label htmlFor="description">Product Category :
-
+        </label> <br />
            <input type="text" 
           placeholder="Enter  product's category..."
           name='product_category'
@@ -136,6 +136,7 @@ const Addproducts = () => {
 
 
 export default Addproducts
+
 
 
 
