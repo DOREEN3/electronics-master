@@ -65,7 +65,7 @@ const CategoryCarousel = ({ hoveredCategory, products, setHoveredCategory, categ
                 <img
                   src="assets/electronic3.webp"
                   className="d-block w-100"
-                  style={{ height: "500px" }}
+                  style={{ height: "500px",objectFit:"cover" }}
                   alt="electronics"
                 />
               </div>
@@ -73,7 +73,7 @@ const CategoryCarousel = ({ hoveredCategory, products, setHoveredCategory, categ
                 <img
                   src="assets/kitchen.png"
                   className="d-block w-100"
-                  style={{ height: "500px" }}
+                  style={{ height: "500px",objectFit:"cover" }}
                   alt="kitchen"
                 />
               </div>
@@ -81,7 +81,7 @@ const CategoryCarousel = ({ hoveredCategory, products, setHoveredCategory, categ
                 <img
                   src="assets/television.jpg"
                   className="d-block w-100"
-                  style={{ height: "500px" }}
+                  style={{ height: "500px" ,objectFit:"cover"}}
                   alt="television"
                 />
               </div>
