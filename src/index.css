@@ -23,7 +23,7 @@ code {
 }
 
 .productimage {
-  max-height: 100%;      /* <— VERY important */
+  max-height: 60%;      /* <— VERY important */
   max-width: 100%;
   object-fit: contain;
 }
