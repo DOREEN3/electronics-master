@@ -29,7 +29,7 @@ const ProductCard = ({
                   key={product.id}
                   className="col-12 col-sm-6 col-md-4 d-flex mb-4"
                 >
-                  <div className="card shadow-sm w-100" style={{ minHeight: "100%" }}>
+                  <div className="card shadow-sm w-100" style={{ minHeight: "50%" }}>
                     
                     <div className="product-img-wrapper">
                     <img
