@@ -20,7 +20,7 @@ const Chatbot = ({
     for (const key in botResponses) {
       if (text.includes(key.toLowerCase())) return botResponses[key];
     }
-    return "I'm not sure I understand. Can you explain further?";
+    return "I'm not sure I understand. Try asking about delivery,shipping, warrant and location.";
   };
 
   const handleSend = () => {
