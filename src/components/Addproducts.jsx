@@ -95,6 +95,16 @@ const Addproducts = () => {
           onChange={handleChange}
           className="form-control"
            /> <br /><br />
+        <label htmlFor="description">Product Category :
+
+           <input type="text" 
+          placeholder="Enter  product's category..."
+          name='product_category'
+          required
+          value={formData.product_category}
+          onChange={handleChange}
+          className="form-control"
+           /> <br /><br />
         <label htmlFor="cost">Product Cost :
          
         </label> <br />
@@ -126,6 +136,7 @@ const Addproducts = () => {
 
 
 export default Addproducts
+
 
 
 
