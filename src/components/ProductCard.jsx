@@ -124,6 +124,10 @@ const ProductCard = ({
       hello: "Hello! How can I help you today?",
       delivery: "We deliver across the country! Call 0796651091 to place an order.",
       shipping: "Shipping fees are as low as Ksh.100. Free delivery around Nairobi.",
+      warrant:"All products come with one year warrant.",
+      payment:" We mainly accept M-pesa payment but cash on delivery",
+      location:"We are located in Nairobi but we deliver nationwide",
+      contact:"You can reach as on 0796651091",  
       bye: "Goodbye! Have a great day!",
   }}
 />
