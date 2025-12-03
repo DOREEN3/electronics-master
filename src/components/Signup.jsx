@@ -129,7 +129,7 @@ const Signup = () => {
 
       
         <form onSubmit={handleSubmit} className='border rounded shadow p-4 w-50'
-             styles={{ 
+             style={{ 
              minWidth: '300px'}}>
             <fieldset>
                 <legend className='text-center fs-3 fw-bold'>Sign Up</legend>
@@ -194,6 +194,7 @@ const Signup = () => {
 
 
 export default Signup
+
 
 
 
