@@ -183,7 +183,7 @@ const Signup = () => {
                   className="rounded px-2 w-100 py-2 " 
                   onChange={handleChange} />
                   {errors.phone && <p className='text-danger'>{errors.phone}</p>}<br /> <br />
-            <button  type='submit' className='btn btn-primary rounded  w-100 py-2' disabled={isFormValid}>Submit</button> <br />
+            <button  type='submit' className='btn btn-primary rounded  w-100 py-2' disabled={!isFormValid}>Submit</button> <br />
             <p  className='mt-2 mx-4 fs-5 fw-bold'>Have an account ? <Link to="/signin">Sign In</Link></p>
             
             </fieldset>
@@ -194,6 +194,7 @@ const Signup = () => {
 
 
 export default Signup
+
 
 
 
