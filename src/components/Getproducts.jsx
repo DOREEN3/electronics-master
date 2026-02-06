@@ -41,7 +41,10 @@ const Getproducts = () => {
     setLoading("Loading products...");
     try {
       const response = await axios.get(
-        "https://doreen98.pythonanywhere.com/api/get_product2"
+        "https://doreen98.pythonanywhere.com/api/get_product2",
+        {
+          withCredentials: true,
+        }
       );
       setProducts(response.data);
       setLoading("");
@@ -274,6 +277,7 @@ const handleReset=()=>{
 };
 
 export default Getproducts;
+
 
 
 
